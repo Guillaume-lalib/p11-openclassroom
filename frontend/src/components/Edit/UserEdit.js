@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from './ModalEdit';
+
 const UserEdit = () => {
   const [show, setShow] = useState(false);
   return (
