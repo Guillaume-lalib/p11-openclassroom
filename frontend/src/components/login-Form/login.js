@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 const login = () => {
   return (
-    <section className="main bg-dark">
+    <section className="main-login bg-dark">
       <div className="sign-in-content">
         <i className="fa fa-user-circle sign-in-icon"></i>
         <h1>Sign In</h1>
