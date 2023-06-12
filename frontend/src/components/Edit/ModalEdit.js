@@ -17,11 +17,21 @@ const ModalEdit = ({ show, setShow }) => {
           </label>
           <label>
             First name:
-            <input name="first-name" type="text" placeholder="Tony"></input>
+            <input
+              name="first-name"
+              type="text"
+              placeholder="Tony"
+              disabled
+            ></input>
           </label>
           <label>
             Last name:
-            <input name="last-name" type="text" placeholder="Tony"></input>
+            <input
+              name="last-name"
+              type="text"
+              placeholder="Tony"
+              disabled
+            ></input>
           </label>
         </form>
         <div className="btn-edit">
