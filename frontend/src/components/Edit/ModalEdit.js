@@ -24,10 +24,10 @@ const ModalEdit = ({ show, setShow }) => {
             <input name="last-name" type="text" placeholder="Tony"></input>
           </label>
         </form>
-      </div>
-      <div className="btn-edit">
-        <button>Save</button>
-        <button onClick={() => setShow(false)}>Cancel</button>
+        <div className="btn-edit">
+          <button>Save</button>
+          <button onClick={() => setShow(false)}>Cancel</button>
+        </div>
       </div>
     </section>
   );

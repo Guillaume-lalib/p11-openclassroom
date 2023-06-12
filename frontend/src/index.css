@@ -270,11 +270,16 @@ main {
 }
 
 .edit-user-info {
+  right: 0;
+  top: 60px;
+  width: 100%;
   color: white;
   text-align: center;
+  background-color: #12002b;
+  position: absolute;
 }
 
-.user-info {
+.user-info form {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -352,5 +357,14 @@ main {
 
   .transaction-button {
     width: 200px;
+  }
+}
+
+@media (max-width: 720px) {
+  .bg-dark {
+    height: auto !important;
+  }
+  .edit-profil {
+    margin-top: 30px;
   }
 }
