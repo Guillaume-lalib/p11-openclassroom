@@ -193,8 +193,14 @@ main {
   width: 80%;
   margin: 0px;
 }
+.signup-button {
+  width: 95% !important;
+}
 
-.sign-in-button {
+.sign-in-button,
+.signup-button {
+  cursor: pointer;
+  width: 100%;
   display: block;
   padding: 8px;
   font-size: 1.1rem;
