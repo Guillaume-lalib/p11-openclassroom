@@ -18,7 +18,6 @@ const Register = () => {
       lastName: e.target[3].value,
       password: e.target[4].value,
     };
-    console.log(data);
     Axios.post('http://localhost:3001/api/v1/user/signup', data).then(() => {
       dispatch(setAddUserData(data));
     });
