@@ -1,7 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
-import reducers from '../reducers';
-
+import addUser from '../features/addUserSlice';
+import connect from '../features/connectUser';
+import modifInfos from '../features/modifUserInfos';
 export const store = configureStore({
-  reducer: reducers,
-  devTools: true,
+  reducer: {
+    userConnect: connect,
+    addUserData: addUser,
+    modifUserInfos: modifInfos,
+  },
 });
