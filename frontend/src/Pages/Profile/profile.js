@@ -4,7 +4,7 @@ import Nav from '../../components/nav/navigation';
 import Edit from '../../components/Edit/UserEdit';
 import Account from '../../components/account/accountProfil';
 
-const profile = () => {
+const Profil = () => {
   return (
     <main>
       <Nav />
@@ -17,4 +17,4 @@ const profile = () => {
   );
 };
 
-export default profile;
+export default Profil;

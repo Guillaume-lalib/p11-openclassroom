@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+
 const login = () => {
   return (
     <section className="main-login bg-dark">
@@ -8,21 +9,26 @@ const login = () => {
         <h1>Sign In</h1>
         <form>
           <div className="input-wrapper">
-            <label htmlFor="username">Username</label>
-            <input type="text" id="username" />
+            <label htmlFor="Email">Email</label>
+            <input placeholder="Email" type="mail" id="Email" />
           </div>
           <div className="input-wrapper">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" />
+            <input placeholder="Password" type="password" id="password" />
           </div>
           <div className="input-remember">
             <input type="checkbox" id="remember-me" />
-            <label htmlFor="remember-me">Remember me</label>
+            <label placeholder="remember me" htmlFor="remember-me">
+              Remember me
+            </label>
           </div>
           <NavLink className="sign-in-button" to={`/profile/:id`}>
             Sign In
           </NavLink>
         </form>
+        <NavLink className="sign-in-button" to={`/signup`}>
+          New member ! Register now
+        </NavLink>
       </div>
     </section>
   );
