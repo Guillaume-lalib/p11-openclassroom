@@ -7,14 +7,18 @@ export const modifUserInfos = createSlice({
       userName: null,
       lastName: null,
       firstName: null,
+      email: null,
+      id: null,
+      createdAt: null,
+      updateAt: null,
     },
   },
   reducers: {
-    setAddUserData: (state, { payload }) => {
+    setModifUserInfos: (state, { payload }) => {
       state.data = payload;
     },
   },
 });
 
-export const { setAddUserData } = modifUserInfos.actions;
+export const { setmodifUserInfos } = modifUserInfos.actions;
 export default modifUserInfos.reducer;

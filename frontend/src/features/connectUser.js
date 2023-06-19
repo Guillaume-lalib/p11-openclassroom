@@ -3,13 +3,10 @@ import { createSlice } from '@reduxjs/toolkit';
 export const connectUser = createSlice({
   name: 'userConnect',
   initialState: {
-    data: {
-      email: null,
-      password: null,
-    },
+    data: null,
   },
   reducers: {
-    setAddUserData: (state, { payload }) => {
+    setConnectUser: (state, { payload }) => {
       state.data = payload;
     },
   },
