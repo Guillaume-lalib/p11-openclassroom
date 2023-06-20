@@ -60,6 +60,9 @@ main {
   color: #42b983;
 }
 
+.main-nav-item i {
+  margin-right: 10px;
+}
 .main-nav-item {
   color: black;
   text-decoration: none;
@@ -184,7 +187,6 @@ main {
   justify-content: center;
   height: 200px;
   width: 320px;
-  gap: 30px;
 }
 .modal-secces h1 {
   margin: 0;
@@ -308,6 +310,7 @@ main {
 }
 
 .edit-user-info {
+  /* display: none; */
   right: 0;
   top: 80px;
   width: 100%;
@@ -337,6 +340,7 @@ main {
 }
 
 .btn-edit button {
+  margin-top: 10px;
   color: white;
   background-color: #00bc77;
   border-color: #00bc77;
