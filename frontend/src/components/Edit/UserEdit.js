@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const UserEdit = () => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [userName, setUserName] = useState();
   const [show, setShow] = useState(false);
-  const token = localStorage.getItem('token');
+  const token = useSelector((state) => state.userConnect.data);
   const form = useRef();
-  console.log(firstName, lastName, userName);
 
   const nav = useNavigate();
   useEffect(() => {
-    if (!token) {
-      nav('/login');
+    if (!token || token === null) {
+      nav('/');
     }
   });
 
@@ -47,6 +47,7 @@ const UserEdit = () => {
       alert('Write username please');
     }
   };
+
   return (
     <section className="edit-profil">
       <div className="header">

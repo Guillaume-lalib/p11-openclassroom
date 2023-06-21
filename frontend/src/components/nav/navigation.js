@@ -6,17 +6,17 @@ const Navigation = () => {
   const userToken = localStorage.getItem('token');
   const [logout, setLogout] = useState(false);
   const [login, setLogin] = useState(true);
+
   const logOut = (e) => {
     localStorage.removeItem('token');
-    e.reload();
   };
   useEffect(() => {
-    if (userToken) {
+    if (!userToken || userToken === null) {
+      setLogin(true);
+      setLogout(false);
+    } else {
       setLogout(true);
       setLogin(false);
-    } else {
-      setLogout(false);
-      setLogin(true);
     }
   });
   return (
@@ -37,7 +37,12 @@ const Navigation = () => {
           </NavLink>
         )}
         {logout && (
-          <NavLink onClick={logOut} className="main-nav-item log-out" to={`/`}>
+          <NavLink className="main-nav-item log-out" to={'/profile/:id'}>
+            Account
+          </NavLink>
+        )}
+        {logout && (
+          <NavLink onClick={logOut} className="main-nav-item log-out" to={'/'}>
             <i className="fa fa-user-circle"></i>
             Sign out
           </NavLink>

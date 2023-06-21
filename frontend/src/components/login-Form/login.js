@@ -12,7 +12,8 @@ const Login = () => {
   const token = useSelector((state) => state.userConnect.data);
   const userToken = localStorage.setItem('token', token);
   useEffect(() => {
-    if (userToken) {
+    if (!userToken || userToken === null) {
+    } else {
       nav('/profile/:id');
     }
   });
