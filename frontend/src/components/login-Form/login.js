@@ -1,22 +1,13 @@
 import Axios from 'axios';
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { setConnectUser } from '../../features/connectUser';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
   const form = useRef();
   const dispatch = useDispatch();
   const nav = useNavigate();
-
-  const token = useSelector((state) => state.userConnect.data);
-  const userToken = localStorage.setItem('token', token);
-  useEffect(() => {
-    if (!userToken || userToken === null) {
-    } else {
-      nav('/profile/:id');
-    }
-  });
 
   const handleSubmit = (e) => {
     e.preventDefault();

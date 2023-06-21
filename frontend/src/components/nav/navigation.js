@@ -1,22 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import Logo from '../../image/argentBankLogo.png';
 import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setConnectUser } from '../../features/connectUser';
 
 const Navigation = () => {
-  const userToken = localStorage.getItem('token');
+  const userToken = useSelector((state) => state.userConnect.data);
   const [logout, setLogout] = useState(false);
   const [login, setLogin] = useState(true);
+  const dispatch = useDispatch();
 
-  const logOut = (e) => {
-    localStorage.removeItem('token');
+  const logOut = () => {
+    dispatch((setConnectUser = null));
   };
   useEffect(() => {
     if (!userToken || userToken === null) {
-      setLogin(true);
       setLogout(false);
+      setLogin(true);
     } else {
-      setLogout(true);
       setLogin(false);
+      setLogout(true);
     }
   });
   return (
