@@ -11,7 +11,7 @@ const Navigation = () => {
   const dispatch = useDispatch();
 
   const logOut = () => {
-    dispatch((setConnectUser = null));
+    dispatch(setConnectUser(null));
   };
   useEffect(() => {
     if (!userToken || userToken === null) {

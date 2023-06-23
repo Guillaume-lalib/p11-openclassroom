@@ -15,27 +15,30 @@ const UserEdit = () => {
   useEffect(() => {
     if (!token || token === null) {
       nav('/');
+    } else {
+      userData();
     }
   });
 
   const product = { name: 'Axios POST with Bearer Token' };
 
-  Axios.post('http://localhost:3001/api/v1/user/profile', product, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  }).then((e) => {
-    setFirstName(e.data.body.firstName);
-    setLastName(e.data.body.lastName);
-    setUserName(e.data.body.userName);
-  });
+  const userData = () => {
+    Axios.post('http://localhost:3001/api/v1/user/profile', product, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((e) => {
+      setFirstName(e.data.body.firstName);
+      setLastName(e.data.body.lastName);
+      setUserName(e.data.body.userName);
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
       userName: e.target[0].value,
     };
-    console.log(e.target[0].value.length);
     if (e.target[0].value.length > 0) {
       Axios.put('http://localhost:3001/api/v1/user/profile', data, {
         headers: {
