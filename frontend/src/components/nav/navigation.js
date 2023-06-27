@@ -40,7 +40,7 @@ const Navigation = () => {
           </NavLink>
         )}
         {logout && (
-          <NavLink className="main-nav-item log-out" to={'/profile/:id'}>
+          <NavLink className="main-nav-item log-out" to={'/profile'}>
             Account
           </NavLink>
         )}

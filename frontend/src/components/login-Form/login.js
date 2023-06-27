@@ -19,7 +19,7 @@ const Login = () => {
       .then((data) => {
         if (data.data.status === 200) {
           dispatch(setConnectUser(data.data.body.token));
-          nav('/profile/:id');
+          nav('/profile');
         }
       })
       .catch((error) => {

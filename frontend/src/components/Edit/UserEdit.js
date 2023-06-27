@@ -1,16 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUserInfos } from '../../features/userInfos';
 
 const UserEdit = () => {
-  const [firstName, setFirstName] = useState();
-  const [lastName, setLastName] = useState();
-  const [userName, setUserName] = useState();
+  const firstName = useSelector((state) => state.userInfos.data.firstName);
+  const lastName = useSelector((state) => state.userInfos.data.lastName);
+  const userName = useSelector((state) => state.userInfos.data.userName);
   const [show, setShow] = useState(false);
   const token = useSelector((state) => state.userConnect.data);
   const form = useRef();
-
+  const dis = useDispatch();
+  dis(
+    setUserInfos({
+      firstName: firstName,
+      lastName: lastName,
+      userName: userName,
+    })
+  );
   const nav = useNavigate();
   useEffect(() => {
     if (!token || token === null) {
@@ -20,17 +28,14 @@ const UserEdit = () => {
     }
   });
 
-  const product = { name: 'Axios POST with Bearer Token' };
-
   const userData = () => {
-    Axios.post('http://localhost:3001/api/v1/user/profile', product, {
+    Axios.post('http://localhost:3001/api/v1/user/profile', null, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     }).then((e) => {
-      setFirstName(e.data.body.firstName);
-      setLastName(e.data.body.lastName);
-      setUserName(e.data.body.userName);
+      console.log(e.data.body);
+      dis(setUserInfos(e.data.body));
     });
   };
 
