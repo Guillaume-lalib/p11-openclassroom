@@ -180,7 +180,7 @@ definitions:
         properties:
           id:
             type: string
-            description: Account UUID
+            description: Account ID
           title:
             type: string
             description: Account title
