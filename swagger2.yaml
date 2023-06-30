@@ -9,7 +9,7 @@ basePath: /api/v1
 schemes:
   - http
 paths:
-  /user/transactions/account:
+  /user/account/n°{number}/{mounth}:
     post:
       security:
         - Bearer: []
@@ -18,6 +18,16 @@ paths:
       summary: User Account API
       description: API for fetching Account
       parameters:
+        - in: path
+          name: number
+          type: integer
+          required: true
+          description: Numeric ID of the account to get.
+        - in: path
+          name: mounth
+          type: integer
+          required: true
+          description: the account to get transaction on mounth.
         - in: body
           name: account
           description: Signup Payload
@@ -37,6 +47,7 @@ paths:
           description: account not found
         "500":
           description: Internal Server Error
+  /user/transactions/{id}:
     put:
       security:
         - Bearer: []
@@ -45,9 +56,14 @@ paths:
       summary: Transaction
       description: API for account Transaction
       parameters:
+        - in: path
+          name: id
+          type: integer
+          required: true
+          description: Numeric ID of the transaction to get.
         - in: body
           name: Transaction
-          description: change ransaction
+          description: change note or category transaction
           required: true
           schema:
             $ref: "#/definitions/accountsDescription"
