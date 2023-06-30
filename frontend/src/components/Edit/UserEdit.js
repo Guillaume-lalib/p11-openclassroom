@@ -34,7 +34,6 @@ const UserEdit = () => {
         Authorization: `Bearer ${token}`,
       },
     }).then((e) => {
-      console.log(e.data.body);
       dis(setUserInfos(e.data.body));
     });
   };
