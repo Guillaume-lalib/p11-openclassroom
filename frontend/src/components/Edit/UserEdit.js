@@ -49,6 +49,7 @@ const UserEdit = () => {
           Authorization: `Bearer ${token}`,
         },
       });
+      setShow(false);
       alert('Username update');
     } else {
       alert('Write username please');
