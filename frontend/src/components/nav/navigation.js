@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Logo from '../../image/argentBankLogo.png';
+import Logo from '../../image/argentBankLogo.avif';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setConnectUser } from '../../features/connectUser';
