@@ -9,19 +9,22 @@ const Navigation = () => {
   const [logout, setLogout] = useState(false);
   const [login, setLogin] = useState(true);
   const dispatch = useDispatch();
-
+  const userName = useSelector((state) => state.userInfos.data.userName);
   const logOut = () => {
     dispatch(setConnectUser(null));
   };
   useEffect(() => {
-    if (!userToken || userToken === null) {
+    connect();
+  });
+  const connect = () => {
+    if (userToken === null || !userToken) {
       setLogout(false);
       setLogin(true);
     } else {
       setLogin(false);
       setLogout(true);
     }
-  });
+  };
   return (
     <nav className="main-nav">
       <NavLink className="main-nav-logo" to={`/`}>
@@ -41,7 +44,7 @@ const Navigation = () => {
         )}
         {logout && (
           <NavLink className="main-nav-item log-out" to={'/profile'}>
-            Account
+            Account of {userName}
           </NavLink>
         )}
         {logout && (
