@@ -9,7 +9,7 @@ basePath: /api/v1
 schemes:
   - http
 paths:
-  /user/account/n°{number}/{mounth}:
+  /user/account/{AccountID}/{mounth}:
     post:
       security:
         - Bearer: []
@@ -19,7 +19,7 @@ paths:
       description: API for fetching Account
       parameters:
         - in: path
-          name: number
+          name: AccountID
           type: integer
           required: true
           description: Numeric ID of the account to get.
