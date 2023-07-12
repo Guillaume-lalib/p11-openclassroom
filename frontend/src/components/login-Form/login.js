@@ -48,11 +48,7 @@ const Login = () => {
               Remember me
             </label>
           </div>
-          <button
-            type="submit"
-            className="sign-in-button"
-            // to={`/profile/:id`}
-          >
+          <button type="submit" className="sign-in-button">
             Sign In
           </button>
           <NavLink className="signup-button" to={`/signup`}>

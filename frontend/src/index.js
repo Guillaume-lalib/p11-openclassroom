@@ -8,7 +8,6 @@ import Home from './Pages/Home/home';
 import Error from './Pages/Error/error';
 import Login from './Pages/Login/login';
 import Profile from './Pages/Profile/profile';
-
 import SignUp from './Pages/SignUp/profilSingUp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
